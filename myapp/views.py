@@ -6,9 +6,12 @@ from django.http import HttpResponse
 def home(request):
     return render(request, 'index.html')
 
+def contact(request):
+    return render(request, 'contact.html')
 
-def greeting(request):
-    return HttpResponse("<h1 style='color:blue'>Hello, world. You're at the About page.</h1> <p>blah blah blah</p>")
+
+def about(request):
+    return render(request, 'about.html')
 
 def test(request):
     return HttpResponse("Hello, test. You're at the Test page.")
