@@ -1,8 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Home Page{% endblock %}
 
 {% block content %}
+<script src="{%static 'js/jquary.js'%}"></script>
+<div class="hero">
 <h1>Home Page</h1>
-<a href="{% url 'about' %}">About</a>
+<button onclick="Callme()">Click me</button>
+</div>
 {% endblock %}
