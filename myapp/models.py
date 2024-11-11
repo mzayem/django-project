@@ -7,4 +7,4 @@ class Product(models.Model):
     price = models.FloatField()
     quantity = models.IntegerField()
     description = models.TextField()
-    
+
