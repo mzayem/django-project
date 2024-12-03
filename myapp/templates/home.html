@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+
+{%  for product in products  %}
+
+ID <p> {{  product.id }}</p> <br>
+NAME <p> {{  product.name }} </p> <br>
+CODE <p> {{  product.code }} </p> <br>
+QUANTITY <p> {{  product.quantity }} </p> <br>
+
+
+{% endfor %}
+
+
+
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<h1>Home page</h1>
+
+<img src="{% static 'images/1.jpg'  %}" >
+
+<script type="text/javascript" src="{% static 'js/juqery.js' %}"></script>
+
+<button  onclick="callme()"> click here</button>
+{% endblock %}
+
+
+
+{% block endnote %} test {% endblock %}
+		
+

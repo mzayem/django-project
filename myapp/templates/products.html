@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<table border="2" align="center">
+	<thead>
+		<th>ID</th>
+		<th>CODE</th>
+		<th>NAME</th>
+		<th>PRICE</th>
+		<th>QUANTITY</th>
+		<th>DESCRIPTION</th>
+		<th>STATUS</th>
+		<th>Action</th>
+	</thead>
+	<tbody>
+		{% for product in products %}
+		<tr>
+				<td>{{product.id}}</td>
+				<td>{{product.code}}</td>
+				<td>{{product.name}}</td>
+				<td>{{product.price}}</td>
+				<td>{{product.quantity}}</td>
+				<td>{{product.description}}</td>
+				{% if product.is_available == True %}
+					<td>AVAILABLE</td>
+				{% endif %}
+				{% if product.is_available == False %}
+				<td>Out of stock</td>
+				{% endif %}
+				<td> <a href="{% url 'edit_product' product.id %}"> EDIT</a> | 
+					<a href="{% url 'delete' product.id %}"> DELETE </a></td>
+		<tr>
+			{% endfor %}
+	</tbody>	
+
+	</table>
+
+</body>
+</html>
